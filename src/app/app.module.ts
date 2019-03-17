@@ -9,6 +9,10 @@ import { AddCardComponent } from './add-card/add-card.component';
 import { DetailsComponent } from './details/details.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import {WeatherService} from './weather.service';
+import {UiService} from './ui.service';
+import {HttpClientModule} from '@angular/common/http';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,15 @@ import { SignupComponent } from './signup/signup.component';
     AddCardComponent,
     DetailsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [WeatherService, UiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
